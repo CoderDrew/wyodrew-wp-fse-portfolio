@@ -1,0 +1,63 @@
+/*
+Theme Name: wyodrew
+Theme URI: https://wyodrew.com
+Author: Drew Reutlinger
+Author URI: https://wyodrew.com
+Description: Custom block theme for Drew's portfolio. Built from scratch using WordPress 6.9 Full Site Editing.
+Version: 1.0
+Requires at least: 6.9
+Tested up to: 6.9
+Requires PHP: 8.0
+Text Domain: wyodrew
+*/
+
+/* Tech Card Block Style */
+.is-style-tech-card {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    border: 1px solid #222222 !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease !important;
+}
+
+.is-style-tech-card:hover {
+    background-color: #2a2a2a !important;
+    border-color: #333333 !important;
+}
+
+.is-style-tech-card * {
+    color: #ffffff !important;
+}
+
+.is-style-tech-card p {
+    color: #05df72 !important;
+}
+
+/* Button Hover Effects - All Buttons */
+.wp-block-button .wp-block-button__link,
+.wp-block-button .wp-element-button,
+div.wp-block-button a {
+    transition: all 0.3s ease !important;
+}
+
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-element-button:hover,
+div.wp-block-button a:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4) !important;
+}
+
+/* Outline Button Specific - matches is-style-outline--2 etc */
+div[class*="is-style-outline"] .wp-block-button__link,
+div[class*="is-style-outline"] .wp-element-button,
+.is-style-outline--2 a {
+    transition: all 0.3s ease !important;
+}
+
+div[class*="is-style-outline"] .wp-block-button__link:hover,
+div[class*="is-style-outline"] .wp-element-button:hover,
+.is-style-outline--2 a:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3) !important;
+}
