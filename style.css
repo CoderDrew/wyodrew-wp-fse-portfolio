@@ -183,3 +183,156 @@ div[class*="is-style-outline"] .wp-element-button:hover,
 .wpcf7-form textarea::placeholder {
     color: #9ca3af;
 }
+
+/* Logo Base Styles */
+.site-logo {
+  position: relative;
+}
+
+.site-logo svg {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: height 0.3s ease;
+}
+
+:root {
+  --logo-text: #f1f3f5;
+  --logo-accent: #7cff6b;
+}
+
+/* Header and Navigation Responsive Styles */
+header.wp-block-group {
+  transition: padding 0.3s ease;
+  align-items: center;
+}
+
+/* Ensure header container has proper padding and alignment */
+.alignfull > header.wp-block-group {
+  padding-left: var(--wp--preset--spacing--40);
+  padding-right: var(--wp--preset--spacing--40);
+}
+
+/* Navigation alignment - visual balance tweaks */
+.wp-block-navigation {
+  align-items: center;
+}
+
+.wp-block-navigation .wp-block-navigation__container {
+  gap: var(--wp--preset--spacing--50);
+  align-items: center;
+}
+
+.wp-block-navigation .wp-block-navigation-item__content {
+  padding: 0.25rem 0;
+}
+
+/* Mobile Navigation Fixes */
+@media (max-width: 782px) {
+  /* Fix mobile header spacing */
+  .alignfull {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .alignfull > header.wp-block-group {
+    padding-left: 0;
+    padding-right: 0;
+    gap: 1rem;
+  }
+
+  /* Mobile logo sizing - smaller to fit better */
+  .site-logo svg {
+    height: 32px;
+    width: auto;
+  }
+
+  /* Mobile navigation adjustments */
+  .wp-block-navigation__responsive-container.is-menu-open {
+    padding-top: var(--wp--preset--spacing--50);
+    padding-bottom: var(--wp--preset--spacing--50);
+  }
+
+  .wp-block-navigation__responsive-container-content {
+    padding-left: var(--wp--preset--spacing--40);
+    padding-right: var(--wp--preset--spacing--40);
+  }
+
+  .wp-block-navigation .wp-block-navigation-item {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Fix hamburger menu alignment */
+  .wp-block-navigation__responsive-container-open {
+    align-self: center;
+  }
+
+  /* Ensure content doesn't overflow */
+  .wp-block-group,
+  .wp-block-cover {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Fix button wrapping on mobile */
+  .wp-block-buttons {
+    flex-wrap: wrap;
+  }
+
+  .wp-block-button {
+    width: 100%;
+  }
+
+  /* Mobile contact form adjustments */
+  .wpcf7-form input[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 783px) and (max-width: 1024px) {
+  .site-logo svg {
+    height: 36px;
+  }
+
+  .alignfull > header.wp-block-group {
+    padding-left: var(--wp--preset--spacing--50);
+    padding-right: var(--wp--preset--spacing--50);
+  }
+}
+
+/* Scrolled state - smaller header with smooth transitions */
+body.scrolled .alignfull {
+  transition: padding 0.3s ease;
+}
+
+body.scrolled header.wp-block-group {
+  padding-top: var(--wp--preset--spacing--30);
+  padding-bottom: var(--wp--preset--spacing--30);
+  transition: padding 0.3s ease;
+}
+
+body.scrolled .site-logo svg {
+  height: 30px;
+}
+
+/* Mobile scrolled state */
+@media (max-width: 782px) {
+  body.scrolled .site-logo svg {
+    height: 28px;
+  }
+
+  body.scrolled header.wp-block-group {
+    padding-top: var(--wp--preset--spacing--40);
+    padding-bottom: var(--wp--preset--spacing--40);
+  }
+}
+
+/* Tablet scrolled state */
+@media (min-width: 783px) and (max-width: 1024px) {
+  body.scrolled .site-logo svg {
+    height: 28px;
+  }
+}
+

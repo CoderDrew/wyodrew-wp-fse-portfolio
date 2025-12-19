@@ -7,10 +7,19 @@
  */
 
 /**
- * Enqueue theme styles
+ * Enqueue theme styles and scripts
  */
 function wyodrew_enqueue_styles() {
     wp_enqueue_style( 'wyodrew-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version') );
+
+    // Enqueue header scroll script
+    wp_enqueue_script(
+        'wyodrew-header-scroll',
+        get_template_directory_uri() . '/assets/js/header-scroll.js',
+        array(),
+        wp_get_theme()->get('Version'),
+        true
+    );
 }
 add_action( 'wp_enqueue_scripts', 'wyodrew_enqueue_styles' );
 
