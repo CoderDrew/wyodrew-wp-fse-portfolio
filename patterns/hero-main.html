@@ -1,19 +1,97 @@
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="padding-top:3rem;padding-bottom:3rem">
-    <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"var(--wp--preset--font-size--xxl)","fontWeight":"700"},"spacing":{"margin":{"bottom":"1rem"}}}} -->
-    <h1 class="wp-block-heading" style="margin-bottom:1rem;font-size:var(--wp--preset--font-size--xxl);font-weight:700">Hi, I'm Drew. I build modern WordPress and AI-powered workflows.</h1>
+<!-- wp:group {"metadata":{"name":"Hero"},"align":"full","className":"hero"} -->
+<div class="wp-block-group alignfull hero">
+  <!-- wp:group {"layout":{"type":"constrained","contentSize":"720px"}} -->
+  <div class="wp-block-group">
+    <!-- wp:group {"className":"hero-logo","layout":{"type":"flex","justifyContent":"center"}} -->
+    <div class="wp-block-group hero-logo">
+      <!-- wp:html -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 520 70"
+        role="img"
+        aria-label="WyoDrew logo"
+        class="logo-svg"
+      >
+        <style>
+          .brace {
+            fill: var(--logo-accent, #7cff6b);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 400;
+            font-size: 44px;
+          }
+          .wyo {
+            fill: var(--logo-text, #f1f3f5);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 500;
+            font-size: 34px;
+            letter-spacing: 0.02em;
+          }
+          .drew {
+            fill: var(--logo-text, #f1f3f5);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            font-size: 40px;
+            letter-spacing: 0.04em;
+          }
+
+          .cursor {
+            fill: var(--logo-text, #f1f3f5);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 500;
+            font-size: 40px;
+            opacity: 0;
+          }
+          .blink {
+            animation: blink 0.8s infinite;
+          }
+          @keyframes blink {
+            0%,
+            50% {
+              opacity: 1;
+            }
+            51%,
+            100% {
+              opacity: 0;
+            }
+          }
+        </style>
+
+        <text id="hero-brace-left" x="0" y="50" class="brace"></text>
+        <text id="hero-wyo" x="34" y="50" class="wyo"></text>
+        <text id="hero-brace-right" x="132" y="50" class="brace"></text>
+        <text id="hero-drew" x="158" y="52" class="drew"></text>
+
+        <!-- cursor -->
+        <text id="hero-cursor" x="290" y="49" class="cursor">|</text>
+      </svg>
+      <!-- /wp:html -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:heading {"level":1,"className":"wp-block-heading"} -->
+    <h1 class="wp-block-heading">
+      Front-end architecture, WordPress engineering,<br />
+      and thoughtful design.
+    </h1>
     <!-- /wp:heading -->
 
-    <!-- wp:paragraph {"style":{"color":{"text":"var(--wp--preset--color--muted)"},"spacing":{"margin":{"bottom":"1.5rem"}}}} -->
-    <p style="margin-bottom:1.5rem;color:var(--wp--preset--color--muted)">I'm a front-end and WordPress developer focused on clean UX, efficient systems, and automation that saves teams time.</p>
+    <!-- wp:paragraph {"fontSize":"medium"} -->
+    <p class="has-medium-font-size">
+      I design and build modern WordPress experiences with a focus on structure,
+      performance, and long-term maintainability.
+    </p>
     <!-- /wp:paragraph -->
 
-    <!-- wp:buttons -->
-    <div class="wp-block-buttons">
-        <!-- wp:button {"backgroundColor":"primary","textColor":"background","style":{"border":{"radius":"0px"}}} -->
-        <div class="wp-block-button"><a class="wp-block-button__link has-background-color has-primary-background-color has-text-color has-background wp-element-button" style="border-radius:0px">View my projects</a></div>
-        <!-- /wp:button -->
+    <!-- wp:group {"layout":{"type":"flex","verticalAlignment":"center","justifyContent":"center"}} -->
+    <div class="wp-block-group">
+      <!-- wp:paragraph {"className":"hero-cta"} -->
+      <p class="hero-cta">
+        <a href="#projects">View selected projects ↓</a>
+      </p>
+      <!-- /wp:paragraph -->
     </div>
-    <!-- /wp:buttons -->
+    <!-- /wp:group -->
+  </div>
+  <!-- /wp:group -->
 </div>
 <!-- /wp:group -->

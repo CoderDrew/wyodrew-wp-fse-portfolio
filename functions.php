@@ -1,4 +1,5 @@
 <?php
+
 /**
  * wyodrew Theme Functions
  *
@@ -9,8 +10,9 @@
 /**
  * Enqueue theme styles and scripts
  */
-function wyodrew_enqueue_styles() {
-    wp_enqueue_style( 'wyodrew-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version') );
+function wyodrew_enqueue_styles()
+{
+    wp_enqueue_style('wyodrew-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version'));
 
     // Enqueue header scroll script
     wp_enqueue_script(
@@ -21,12 +23,28 @@ function wyodrew_enqueue_styles() {
         true
     );
 }
-add_action( 'wp_enqueue_scripts', 'wyodrew_enqueue_styles' );
+add_action('wp_enqueue_scripts', 'wyodrew_enqueue_styles');
+
+function wyodrew_enqueue_hero_logo_animation()
+{
+    if (is_front_page()) {
+        wp_enqueue_script(
+            'wyodrew-hero-logo',
+            get_template_directory_uri() . '/assets/js/hero-logo.js',
+            [],
+            '1.0',
+            true
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'wyodrew_enqueue_hero_logo_animation');
+
 
 /**
  * Register custom block styles
  */
-function wyodrew_register_block_styles() {
+function wyodrew_register_block_styles()
+{
     register_block_style(
         'core/group',
         array(
@@ -35,12 +53,13 @@ function wyodrew_register_block_styles() {
         )
     );
 }
-add_action( 'init', 'wyodrew_register_block_styles' );
+add_action('init', 'wyodrew_register_block_styles');
 
 /**
  * Register Custom Post Type: Projects
  */
-function wyodrew_register_projects_cpt() {
+function wyodrew_register_projects_cpt()
+{
     $labels = array(
         'name'                  => 'Projects',
         'singular_name'         => 'Project',
@@ -63,20 +82,21 @@ function wyodrew_register_projects_cpt() {
         'show_in_rest'          => true,
         'rest_base'             => 'projects',
         'menu_icon'             => 'dashicons-portfolio',
-        'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes' ),
-        'rewrite'               => array( 'slug' => 'project' ),
+        'supports'              => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes'),
+        'rewrite'               => array('slug' => 'project'),
         'show_in_nav_menus'     => true,
         'menu_position'         => 5,
     );
 
-    register_post_type( 'project', $args );
+    register_post_type('project', $args);
 }
-add_action( 'init', 'wyodrew_register_projects_cpt' );
+add_action('init', 'wyodrew_register_projects_cpt');
 
 /**
  * Register Custom Taxonomy: Project Categories
  */
-function wyodrew_register_project_category_taxonomy() {
+function wyodrew_register_project_category_taxonomy()
+{
     $labels = array(
         'name'              => 'Project Categories',
         'singular_name'     => 'Project Category',
@@ -96,9 +116,9 @@ function wyodrew_register_project_category_taxonomy() {
         'show_in_rest'      => true,
         'rest_base'         => 'project-categories',
         'show_admin_column' => true,
-        'rewrite'           => array( 'slug' => 'project-category' ),
+        'rewrite'           => array('slug' => 'project-category'),
     );
 
-    register_taxonomy( 'project-category', array( 'project' ), $args );
+    register_taxonomy('project-category', array('project'), $args);
 }
-add_action( 'init', 'wyodrew_register_project_category_taxonomy' );
+add_action('init', 'wyodrew_register_project_category_taxonomy');

@@ -201,6 +201,97 @@ div[class*="is-style-outline"] .wp-element-button:hover,
   --logo-accent: #7cff6b;
 }
 
+
+.hero {
+  background: radial-gradient(
+    circle at top left,
+    rgba(124, 255, 107, 0.08),
+    transparent 60%
+  );
+}
+
+.hero h1 {
+
+}
+
+.hero p {
+  max-width: 60ch;
+  opacity: 0.85;
+}
+
+.hero-cta a {
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.hero-cta a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--logo-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.hero-cta a:hover::after {
+  transform: scaleX(1);
+}
+
+.hero + .wp-block-group::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: var(--wp--preset--spacing--70);
+}
+
+.hero-logo svg {
+  height: 40px; /* matches header logo */
+  width: auto;
+  margin-bottom: var(--wp--preset--spacing--40);
+  display: block;
+}
+
+/* Initial animation state */
+.hero-logo .logo-svg text:not(.cursor) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo .logo-svg text {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+ .hero-logo text {
+    opacity: 1 !important;
+  }
+  .cursor {
+    display: none !important;
+  }
+  
+}
+
+.hero-logo .cursor.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+
+
+
 /* Header and Navigation Responsive Styles */
 header.wp-block-group {
   transition: padding 0.3s ease;
